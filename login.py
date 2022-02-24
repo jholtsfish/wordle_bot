@@ -1,13 +1,18 @@
 from selenium import webdriver
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.firefox import GeckoDriverManager
 
 class Log_in:
-    driver = webdriver.Firefox()
+    driver = None
+    service = None
 
     def __init__(self):
-        self.driver = ()
+        self.service = FirefoxService
+        self.driver = webdriver.Firefox
     
     def DriverStart(self):
-        self.driver = webdriver.Firefox()
+        self.service(executable_path=GeckoDriverManager().install())
+        self.driver(service=self.service)
 # Old example code
 '''    bob = str()
 
