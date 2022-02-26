@@ -1,7 +1,5 @@
 import json
 from cryptography.fernet import Fernet
-from encKey import key
-key = key()
 
 class user:
     userName = None
@@ -17,24 +15,32 @@ class user:
                 self.userName = json.load(data)
             with open('userPasswords.json') as data:
                 self.userPassword = json.load(data)
+            with open('userNamesKey.json') as data:
+                self.encNameKey = json.load(data)  
+            with open('userPasswordsKey.json') as data:
+                self.userPasswordKey = json.load(data)          
         except FileNotFoundError:
             self.userName = {}
             self.userPassword = {}
+            self.userNameKey = {}
+            self.userPasswordKey = {}
             pass
         except json.JSONDecodeError:
             self.userName = {}
             self.userPassword = {}
+            self.userNameKey = {}
+            self.userPasswordKey = {}
             pass
         # End loading json files into the program
     def CheckUser(self, userName, userPassword):
         if userName + " username" in self.userName and userName + " password" in self.userPassword:
             # Decrypting the data in the json files
             self.userNameCrypt = self.userName[userName + " username"]
-            self.userNameKey = key.encNameKey[userName + " username key"]
-            self.userName = key.encNameKey.decrypt(self.userNameCrypt).decode()
+            self.encNameKey = self.userNameKey[userName + " username key"]
+            self.userName = self.encNameKey.decrypt(self.userNameCrypt).decode()
             self.userPasswordCrypt = self.userPassword[userName + " password"]
-            self.userPasswordKey = key.encPasswordKey[userName + " password key"]
-            self.userPassword = key.encPasswordKey.decrypt(self.userPasswordCrypt).decode()
+            self.encPasswordKey = self.userPasswordKey[userName + " password key"]
+            self.userPassword = self.encPasswordKey.decrypt(self.userPasswordCrypt).decode()
             # End decryption of data in the json files
             return self.userName, self.userPassword
         else:
@@ -57,9 +63,9 @@ class user:
                 json.dump(self.userName, data, indent=4, ensure_ascii = False)
             with open('userPasswords.json', 'w') as data:
                 json.dump(self.userPassword, data, indent=4, ensure_ascii = False)
+            with open('userNamesKey.json', 'w') as data:
+                json.dump(self.encNameKey, data, indent=4, ensure_ascii = False)
+            with open('userPasswordsKey.json', 'w') as data:
+                json.dump(self.encPasswordKey, data, indent=4, ensure_ascii = False)
             # End saving to json files
-            # Saving to the key.py file
-            key.AppendUserKey(self.encNameKey)
-            key.AppendPasswordKey(self.encPasswordKey)
-            # End saving to the key.py file
             return self.userName, self.userPassword
