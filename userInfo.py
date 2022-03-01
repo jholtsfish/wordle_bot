@@ -1,3 +1,4 @@
+from base64 import b64encode
 import json
 from cryptography.fernet import Fernet
 import pickle
@@ -36,15 +37,16 @@ class user:
             pass
         # End loading json files into the program
     def CheckUser(self, name, pwd):
+        # Decrypting the data in the json files
+        self.userNameCrypt = self.userName[name + " username"]
+        self.encNameKey = self.encNameKey[name + " username key"]
+        self.encNameKey = Fernet(bytes(self.encNameKey), 'utf-8')
+        self.userName = self.encNameKey.decrypt(self.userNameCrypt).decode()
+        self.userPasswordCrypt = self.userPassword[name + " password"]
+        self.encPasswordKey = self.userPasswordKey[name + " password key"]
+        self.userPassword = self.encPasswordKey.decrypt(self.userPasswordCrypt).decode()
+        # End decryption of data in the json files
         if name + " username" in self.userName and name + " password" in self.userPassword:
-            # Decrypting the data in the json files
-            self.userNameCrypt = self.userName[name + " username"]
-            self.encNameKey = self.encNameKey[name + " username key"]
-            self.userName = self.encNameKey.decrypt(self.userNameCrypt).decode()
-            self.userPasswordCrypt = self.userPassword[name + " password"]
-            self.encPasswordKey = self.userPasswordKey[name + " password key"]
-            self.userPassword = self.encPasswordKey.decrypt(self.userPasswordCrypt).decode()
-            # End decryption of data in the json files
             return name, pwd
         else:
             # Encryption
