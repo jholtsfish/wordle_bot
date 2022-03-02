@@ -1,9 +1,12 @@
-from base64 import b64encode
-import json
+# Import Fernet for encryption
 from cryptography.fernet import Fernet
-import pickle
-import sys
-import time
+# End import
+
+# Import needed libraries
+import pickle, sys, time
+# End import
+
+
 class user:
 
 
