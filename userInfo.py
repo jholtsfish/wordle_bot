@@ -13,14 +13,14 @@ class user:
     def __init__(self):
         try:
             # Loading json files into the program
-            with open('userNames.json', 'rb') as data:
-                self.userName = json.load(data)
-            with open('userPasswords.json', 'rb') as data:
-                self.userPassword = json.load(data)
-            with open('userNamesKey.json', 'rb') as data:
-                self.encNameKey = json.load(data)  
-            with open('userPasswordsKey.json', 'rb') as data:
-                self.encPasswordKey = json.load(data)
+            with open('userNames.pkl', 'rb') as data:
+                self.userName = pickle.load(data)
+            with open('userPasswords.pkl', 'rb') as data:
+                self.userPassword = pickle.load(data)
+            with open('userNamesKey.pkl', 'rb') as data:
+                self.encNameKey = pickle.load(data)  
+            with open('userPasswordsKey.pkl', 'rb') as data:
+                self.encPasswordKey = pickle.load(data)
             self.ogUserName = self.userName
             self.ogUserPassword = self.userPassword
             self.ogEncNameKey = self.encNameKey
@@ -41,10 +41,10 @@ class user:
         if name + " username" in self.userName and name + " password" in self.userPassword:
             # Decrypting the data in the json files
             self.userNameCrypt = self.userName[name + " username"]
-            self.encNameKey = Fernet(bytes(self.encNameKey[name + " username key"], 'utf-8'))
+            self.encNameKey = self.encNameKey[name + " username key"]
             self.userName = self.encNameKey.decrypt(self.userNameCrypt).decode()
             self.userPasswordCrypt = self.userPassword[name + " password"]
-            self.encPasswordKey = self.userPasswordKey[name + " password key"]
+            self.encPasswordKey = self.encPasswordKey[name + " password key"]
             self.userPassword = self.encPasswordKey.decrypt(self.userPasswordCrypt).decode()
             # End decryption of data in the json files        
             return name, pwd
@@ -58,10 +58,10 @@ class user:
             self.encPassword = self.keyPwd.encrypt(pwd.encode())
             # End encryption
             # Store in a dictionary
-            self.userName = {f"{name} username": str(self.encName)}
-            self.userPassword = {f'{name} password': str(self.encPassword)}
-            self.encNameKey = {f'{name} username key': str(self.keyUser)}
-            self.encPasswordKey = {f'{name} password key': str(self.keyPwd)}
+            self.userName = {f"{name} username": self.encName}
+            self.userPassword = {f'{name} password': self.encPassword}
+            self.encNameKey = {f'{name} username key': self.keyUser}
+            self.encPasswordKey = {f'{name} password key': self.keyPwd}
             # End dictionary storage
             self.userName.update(self.ogUserName)
             self.userPassword.update(self.ogUserPassword)
@@ -69,13 +69,13 @@ class user:
             self.encPasswordKey.update(self.ogEncPasswordKey)
             print(self.userName, self.userPassword, self.encNameKey, self.encPasswordKey)
             # Save to json files
-            with open('userNames.json', 'w') as data:
-                json.dump(self.userName, data)
-            with open('userPasswords.json', 'w') as data:
-                json.dump(self.userPassword, data)
-            with open('userNamesKey.json', 'w') as data:
-                json.dump(self.encNameKey, data)
-            with open('userPasswordsKey.json', 'w') as data:
-                json.dump(self.encPasswordKey, data)
+            with open('userNames.pkl', 'wb') as data:
+                pickle.dump(self.userName, data)
+            with open('userPasswords.pkl', 'wb') as data:
+                pickle.dump(self.userPassword, data)
+            with open('userNamesKey.pkl', 'wb') as data:
+                pickle.dump(self.encNameKey, data)
+            with open('userPasswordsKey.pkl', 'wb') as data:
+                pickle.dump(self.encPasswordKey, data)
             # End saving to json files
             return name, pwd
