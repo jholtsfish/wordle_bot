@@ -1,4 +1,3 @@
-from login import Log_in
 from userInfo import user
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService

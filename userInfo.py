@@ -93,20 +93,33 @@ class user:
 
         # Check if the username and password match up with the ones in the pickle file  
         for i in range(5):
+            rightPassword = False
             if self.userName == name and self.userPassword == pwd:
                 # These rightPassword variables enhance the process
                 rightPassword = True
+                notCreate = False
+                print("Correct!")
                 break
+            elif rightPassword == False:
+                pwd = str(input("\nPlease reenter your password.\n--> "))
+                if self.userPassword == pwd:
+                    rightPassword = True
+                    break
+                else:
+                    rightPassword = False
+                    continue
             elif self.userName == name and self.userPassword != pwd:
                 print("Sorry! You typed the wrong password. Try again.")
                 rightPassword = False
+                notCreate = False
                 continue
             else:
                 # Create a user if one doesn't exist. 
-                createUser = str.lower(str(input("Sorry! That user doesn't exist! Create a new user?\ny/n -->")))
+                createUser = str.lower(str(input("Sorry! That user doesn't exist! Create a new user?\ny/n --> ")))
                 if createUser == 'y':
                     self.CreateUser(name, pwd)
                     rightPassword = True
+                    notCreate = False
                     break
                 # End creating a user
 
@@ -159,7 +172,6 @@ class user:
         self.userPassword.update(self.ogUserPassword)
         self.encNameKey.update(self.ogEncNameKey)
         self.encPasswordKey.update(self.ogEncPasswordKey)
-        print(self.userName, self.userPassword, self.encNameKey, self.encPasswordKey)
         # End updating
 
 
