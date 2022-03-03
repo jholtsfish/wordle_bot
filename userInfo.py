@@ -93,14 +93,41 @@ class user:
 
         # Check if the username and password match up with the ones in the pickle file  
         for i in range(5):
-            rightPassword = False
+            if i == 0:
+                rightPassword = True
+                create = True
+            elif i != 0:
+                rightPassword = False
+                create = False
             if self.userName == name and self.userPassword == pwd:
                 # These rightPassword variables enhance the process
                 rightPassword = True
-                notCreate = False
+                create = False
                 print("Correct!")
                 break
-            elif rightPassword == False:
+            elif name not in self.userName and rightPassword and pwd not in self.userPassword and create:
+                # Create a user if one doesn't exist. 
+                createUser = str.lower(str(input("Sorry! That user doesn't exist! Create a new user?\ny/n --> ")))
+                if createUser == 'y':
+                    self.CreateUser(name, pwd)
+                    rightPassword = True
+                    create = False
+                    break
+                # If the user doesn't want to create an account
+                else:
+                    rightPassword = False
+                    # Not create enhances the process of not making a user
+                    create = True
+                    print("Okay. We won't save your details.")
+                    break
+                    # End not wanting an account
+                # End creating a new user
+            elif self.userName == name and self.userPassword != pwd and i == 0:
+                print("Sorry! You typed the wrong password. Try again.")
+                rightPassword = False
+                create = False
+                continue            
+            elif rightPassword == False and name in self.userName and create == False and i != 0:
                 pwd = str(input("\nPlease reenter your password.\n--> "))
                 if self.userPassword == pwd:
                     rightPassword = True
@@ -108,35 +135,12 @@ class user:
                 else:
                     rightPassword = False
                     continue
-            elif self.userName == name and self.userPassword != pwd:
-                print("Sorry! You typed the wrong password. Try again.")
-                rightPassword = False
-                notCreate = False
-                continue
-            else:
-                # Create a user if one doesn't exist. 
-                createUser = str.lower(str(input("Sorry! That user doesn't exist! Create a new user?\ny/n --> ")))
-                if createUser == 'y':
-                    self.CreateUser(name, pwd)
-                    rightPassword = True
-                    notCreate = False
-                    break
-                # End creating a user
 
-
-                # If the user doesn't want to create an account
-                else:
-                    rightPassword = False
-                    # Not create enhances the process of not making a user
-                    notCreate = True
-                    print("Okay. We won't save your details.")
-                    break
-                # End not wanting an account
 
         if rightPassword:
             # Return vars needed for the program
             return name, pwd
-        elif notCreate:
+        elif create == False:
             # Return vars needed for the program
             return name, pwd
         else:
