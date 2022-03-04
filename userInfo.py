@@ -66,7 +66,7 @@ class user:
             self.ogUserPassword = {}
             self.ogEncNameKey = {}
             self.ogEncPasswordKey = {}
-            otherError = "Unknown error"
+            error = "Unknown error"
             pass
         # End crash handling
 
