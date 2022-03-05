@@ -1,5 +1,7 @@
 with open("valid_words.txt") as file:
-    WORDS = [word for word in (word.strip() for word in file.readlines()) if len(word) == 5]
+    WORDS = []
+    for word in file.readlines():
+        word = word.strip()
+        if len(word) == 5:
+            WORDS.append(word)
     file.close()
-
-print(WORDS)
