@@ -3,7 +3,7 @@ from cryptography.fernet import Fernet
 # End import
 
 # Import needed libraries
-import pickle, sys, time
+import pickle, sys, time, json
 # End import
 
 
@@ -11,12 +11,12 @@ class user:
 
 
     # Declare any vars needed
-    userName = None
+    '''userName = None
     userPassword = None
     encName = None
     encPassword = None
     encNameKey = None
-    encPasswordKey = None
+    encPasswordKey = None'''
     # Done declaring
 
 
@@ -26,46 +26,53 @@ class user:
     # Loading pickle files into the program. We load them first so we have any data needed.  
         try:
 
-            with open('userNames.pkl', 'rb') as data:
+            """with open('userNames.pkl', 'rb') as data:
                 self.userName = pickle.load(data)
             with open('userPasswords.pkl', 'rb') as data:
                 self.userPassword = pickle.load(data)
             with open('userNamesKey.pkl', 'rb') as data:
                 self.encNameKey = pickle.load(data)  
             with open('userPasswordsKey.pkl', 'rb') as data:
-                self.encPasswordKey = pickle.load(data)
+                self.encPasswordKey = pickle.load(data)"""
+            unneededData = open('info.json', 'r')
+            self.userInfo = json.load(unneededData)
 
 
             # Declare vars that we add to the dictionary later to add multi-user support
-            self.ogUserName = self.userName
+            '''self.ogUserName = self.userName
             self.ogUserPassword = self.userPassword
             self.ogEncNameKey = self.encNameKey
-            self.ogEncPasswordKey = self.encPasswordKey 
+            self.ogEncPasswordKey = self.encPasswordKey'''
+            self.ogUserInfo = self.userInfo
             # End declaring
 
 
         # If the pickle files don't exist, we make sure the program doesn't crash  
         except FileNotFoundError:
-            self.userName = {}
+            '''self.userName = {}
             self.userPassword = {}
             self.encNameKey = {}
             self.userPasswordKey = {}
             self.ogUserName = {}
             self.ogUserPassword = {}
             self.ogEncNameKey = {}
-            self.ogEncPasswordKey = {}
+            self.ogEncPasswordKey = {}'''
+            self.userInfo = {'nothing here': 'nope'}
+            self.ogUserInfo = {}
             error = "File not found"
             pass
 
         except:
-            self.userName = {}
+            '''self.userName = {}
             self.userPassword = {}
             self.encNameKey = {}
             self.userPasswordKey = {}
             self.ogUserName = {}
             self.ogUserPassword = {}
             self.ogEncNameKey = {}
-            self.ogEncPasswordKey = {}
+            self.ogEncPasswordKey = {}'''
+            self.userInfo = {'nothing here': 'nope'}
+            self.ogUserInfo = {}
             error = "Unknown error"
             pass
         # End crash handling
@@ -79,14 +86,16 @@ class user:
 
         # Decrypting the data in the json files
         try:
-            self.userNameCrypt = self.userName[name + " username"]
-            self.encNameKey = self.encNameKey[name + " username key"]
+            self.userNameCrypt = self.userInfo[name + " username"]
+            self.encNameKey = Fernet(bytes(self.userInfo[name + " username key"], 'utf-8'))
             self.userName = self.encNameKey.decrypt(self.userNameCrypt).decode()
-            self.userPasswordCrypt = self.userPassword[name + " password"]
-            self.encPasswordKey = self.encPasswordKey[name + " password key"]
+            self.userPasswordCrypt = self.userInfo[name + " password"]
+            self.encPasswordKey = Fernet(bytes(self.userInfo[name + " password key"], 'utf-8'))
             self.userPassword = self.encPasswordKey.decrypt(self.userPasswordCrypt).decode()
         except:
             # This makes sure that if there isn't any keys, or if the user doesn't exist in the pickle file, the program will continue and not crash
+            self.userName = ''
+            self.userPassword = ''
             pass
         # End decryption of data in the json files 
 
@@ -160,34 +169,44 @@ class user:
         self.keyPwd = Fernet(self.key2)
         self.encName = self.keyUser.encrypt(name.encode())
         self.encPassword = self.keyPwd.encrypt(pwd.encode())
+        self.keyUser = bytes(self.keyUser)
+        self.keyPwd = bytes(self.keyPwd)
         # End encryption
 
 
         # Store in a dictionary
-        self.userName = {f"{name} username": self.encName}
+        '''self.userName = {f"{name} username": self.encName}
         self.userPassword = {f'{name} password': self.encPassword}
         self.encNameKey = {f'{name} username key': self.keyUser}
-        self.encPasswordKey = {f'{name} password key': self.keyPwd}
+        self.encPasswordKey = {f'{name} password key': self.keyPwd}'''
+        self.userInfo = {f'{name} username': str(self.encName, 'utf-8'), f'{name} password': str(self.encPassword, 'utf-8'), f'{name} username key': str(self.keyUser, 'utf-8'), f'{name} password key': str(self.keyPwd, 'utf-8')}
         # End dictionary storage
 
 
         # Update the dictionaries for multi-user support
-        self.userName.update(self.ogUserName)
+        '''self.userName.update(self.ogUserName)
         self.userPassword.update(self.ogUserPassword)
         self.encNameKey.update(self.ogEncNameKey)
-        self.encPasswordKey.update(self.ogEncPasswordKey)
+        self.encPasswordKey.update(self.ogEncPasswordKey)'''
+        self.userInfo.update(self.ogUserInfo)
+        self.userInfo = self.userInfo
         # End updating
 
 
         # Save to pickle files
-        with open('userNames.pkl', 'wb') as data:
+        '''with open('userNames.pkl', 'wb') as data:
             pickle.dump(self.userName, data)
         with open('userPasswords.pkl', 'wb') as data:
             pickle.dump(self.userPassword, data)
         with open('userNamesKey.pkl', 'wb') as data:
             pickle.dump(self.encNameKey, data)
         with open('userPasswordsKey.pkl', 'wb') as data:
-            pickle.dump(self.encPasswordKey, data)
+            pickle.dump(self.encPasswordKey, data)'''
+        '''unneededData = open('userInfo.json', 'w')
+        object = json.dump(unneededData)
+        self.userInfo()'''
+        with open('userInfo.json', 'w') as data:
+            json.dumps(data, self.userInfo)
         # End saving to pickle files
 
 
