@@ -4,7 +4,7 @@ class valid_words:
     untested_words = None
     def __init__(self):
         self.untested_words = []
-        while True:
-            with open('valid_words.txt', 'r') as data:
-                lines = data.readlines()
-            True
+        with open('valid_words.txt', 'r') as data:
+            lines = data.readlines()
+            for line in data.readlines():
+                line.split()
