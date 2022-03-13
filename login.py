@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Why is this necessary? Wordle doesn't have a login. What is this for????
 
 '''from selenium.webdriver.support.ui import WebDriverWait
@@ -47,3 +48,11 @@ class Log_in:
         # Wait a bit
         time.sleep(1)
 # End defining'''
+=======
+from attr import attr
+import selenium as sl
+
+class Login:
+    attribute = None
+
+>>>>>>> cc171c18b70c1f0af11b6c72e8438b4aa1e05093

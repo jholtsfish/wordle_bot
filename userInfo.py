@@ -6,8 +6,11 @@ from cryptography.fernet import Fernet
 import pickle, sys, time
 # End import
 
+from coninfo import user
 
-class user:
+newdict = {'username': 'conner'}
+user.writeuser(newdict)
+"""class user:
 
 
     # Declare any vars needed
@@ -188,4 +191,4 @@ class user:
 
 
         # Return the vars needed for the program
-        return name, pwd
+        return name, pwd"""
