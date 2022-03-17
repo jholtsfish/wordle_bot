@@ -1,0 +1,199 @@
+1646517926139	geckodriver	INFO	Listening on 127.0.0.1:59981
+1646517929195	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59982" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileyW5nuK"
+1646517964935	geckodriver	INFO	Listening on 127.0.0.1:60106
+1646517967974	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60107" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileNk5wov"
+1646517968792	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileNk5wov\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60107/devtools/browser/153807b1-e3b0-46fd-ae35-771a69bb3304
+1646517973135	Marionette	INFO	Listening on port 60113
+1646517973339	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1646518129884	Marionette	INFO	Stopped listening on port 60113
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU1646518133331	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51328" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileqaP9Vy"
+1646518134402	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileqaP9Vy\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51328/devtools/browser/da725dce-d037-4a67-afc1-3ab17507b4ee
+1646518138643	Marionette	INFO	Listening on port 51334
+1646518138693	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1646518153586	Marionette	INFO	Stopped listening on port 51334
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1646518766816	geckodriver	INFO	Listening on 127.0.0.1:60697
+1646518769905	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60698" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofile7eXoUs"
+1646518771053	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofile7eXoUs\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60698/devtools/browser/53f345e0-2d56-4a72-8ae5-712201eca24d
+1646518776440	Marionette	INFO	Listening on port 60703
+1646518776937	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1646519361462	Marionette	INFO	Stopped listening on port 60703
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1646924192868	geckodriver	INFO	Listening on 127.0.0.1:50337
+1646924195952	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50338" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileCZPg6X"
+1646924197377	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileCZPg6X\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50338/devtools/browser/00a87652-df74-4c20-8fa2-0e9f618fc325
+1646924203424	Marionette	INFO	Listening on port 50345
+1646924203533	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1646924225095	Marionette	INFO	Stopped listening on port 50345
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1646924546337	geckodriver	INFO	Listening on 127.0.0.1:50229
+1646924549418	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50230" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileEapiHh"
+1646924550217	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileEapiHh\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50230/devtools/browser/6d635538-d2c4-4b11-b6da-e56df8bae4f1
+1646924555472	Marionette	INFO	Listening on port 50239
+1646924555816	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1646927793892	addons.xpi	ERROR	System addon update list error Error: Failed downloading XML, status: 0, reason: error
+1646931072030	geckodriver	INFO	Listening on 127.0.0.1:49703
+1646931075076	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49705" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofilehjIyVa"
+1646931075916	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofilehjIyVa\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49705/devtools/browser/11d814f3-ff60-4dc4-a934-68894f629aee
+1646931080369	Marionette	INFO	Listening on port 65350
+1646931080447	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1646931094881	Marionette	INFO	Stopped listening on port 65350
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1646931212969	geckodriver	INFO	Listening on 127.0.0.1:61621
+1646931215997	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61622" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofile7NIwUe"
+1646931216604	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofile7NIwUe\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:61622/devtools/browser/49d50354-70f7-42ea-bbde-52ce205f0401
+1646931220548	Marionette	INFO	Listening on port 61631
+1646931220859	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1646931234418	Marionette	INFO	Stopped listening on port 61631
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1646931237644	geckodriver	INFO	Listening on 127.0.0.1:61761
+1646931240701	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61762" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofile5Qdij0"
+1646931241477	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofile5Qdij0\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:61762/devtools/browser/1a24b9e7-4208-43de-92bc-affe83159d05
+1646931246072	Marionette	INFO	Listening on port 56013
+1646931246585	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.error: (new InvalidStateError("JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment", (void 0), 327))
+InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment: _createTargetActor/<@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:327:12
+newListener@resource://devtools/shared/event-emitter.js:173:27
+_emit@resource://devtools/shared/event-emitter.js:244:34
+emit@resource://devtools/shared/event-emitter.js:190:18
+emit@resource://devtools/shared/event-emitter.js:342:18
+destroy@resource://devtools/server/actors/targets/window-global.js:743:10
+module.exports/proto.destroy@resource://devtools/server/actors/targets/target-actor-mixin.js:244:30
+instantiate@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:242:26
+handleEvent@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:651:12
+
+console.error: (new InvalidStateError("JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment", (void 0), 327))
+InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment: _createTargetActor/<@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:327:12
+newListener@resource://devtools/shared/event-emitter.js:173:27
+_emit@resource://devtools/shared/event-emitter.js:244:34
+emit@resource://devtools/shared/event-emitter.js:190:18
+emit@resource://devtools/shared/event-emitter.js:342:18
+destroy@resource://devtools/server/actors/targets/window-global.js:743:10
+module.exports/proto.destroy@resource://devtools/server/actors/targets/target-actor-mixin.js:244:30
+instantiate@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:242:26
+handleEvent@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:651:12
+
+console.error: (new InvalidStateError("JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment", (void 0), 327))
+InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment: _createTargetActor/<@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:327:12
+newListener@resource://devtools/shared/event-emitter.js:173:27
+_emit@resource://devtools/shared/event-emitter.js:244:34
+emit@resource://devtools/shared/event-emitter.js:190:18
+emit@resource://devtools/shared/event-emitter.js:342:18
+destroy@resource://devtools/server/actors/targets/window-global.js:743:10
+module.exports/proto.destroy@resource://devtools/server/actors/targets/target-actor-mixin.js:244:30
+instantiate@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:242:26
+handleEvent@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:651:12
+
+console.error: (new InvalidStateError("JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment", (void 0), 327))
+InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment: _createTargetActor/<@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:327:12
+newListener@resource://devtools/shared/event-emitter.js:173:27
+_emit@resource://devtools/shared/event-emitter.js:244:34
+emit@resource://devtools/shared/event-emitter.js:190:18
+emit@resource://devtools/shared/event-emitter.js:342:18
+destroy@resource://devtools/server/actors/targets/window-global.js:743:10
+module.exports/proto.destroy@resource://devtools/server/actors/targets/target-actor-mixin.js:244:30
+instantiate@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:242:26
+handleEvent@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:651:12
+
+1646932532147	geckodriver	INFO	Listening on 127.0.0.1:62541
+1646932535208	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62542" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileJmfJye"
+1646932536612	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileJmfJye\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:62542/devtools/browser/db0410b5-f4ca-4468-8a95-42223ab285c4
+1646932541224	Marionette	INFO	Listening on port 62548
+1646932541644	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1646932557574	Marionette	INFO	Stopped listening on port 62548
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1646932753904	geckodriver	INFO	Listening on 127.0.0.1:49710
+1646932756997	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49711" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofilewRbs9E"
+1646932757842	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofilewRbs9E\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49711/devtools/browser/29602949-55bd-4981-986e-66e40ed62c4c
+1646932762903	Marionette	INFO	Listening on port 49718
+1646932763397	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1646932881388	Marionette	INFO	Stopped listening on port 49718
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1646932882221	geckodriver	INFO	Listening on 127.0.0.1:49863
+1646932885295	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49864" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofile6JCLTI"
+1646932886160	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofile6JCLTI\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49864/devtools/browser/54d021d1-c78d-4620-9b9d-46eb7a3326e0
+1646932891720	Marionette	INFO	Listening on port 49870
+1646932891782	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1646932909251	Marionette	INFO	Stopped listening on port 49870
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1646933045108	geckodriver	INFO	Listening on 127.0.0.1:58309
+1646933048196	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58310" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileg7mhXp"
+1646933048983	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofileg7mhXp\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58310/devtools/browser/005482d5-4156-4e89-8253-11d933f3c367
+1646933053407	Marionette	INFO	Listening on port 58318
+1646933053595	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1646933066808	Marionette	INFO	Stopped listening on port 58318
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1646933088345	geckodriver	INFO	Listening on 127.0.0.1:50723
+1646933091428	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50724" "-no-remote" "-profile" "C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofile0R0J2N"
+1646933092458	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\holti\\AppData\\Local\\Temp\\rust_mozprofile0R0J2N\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50724/devtools/browser/efd059be-08ed-4fe5-b4dc-c6258277f8be
+1646933096515	Marionette	INFO	Listening on port 50730
+1646933096768	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://dd.nytimes.com/tags.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1646933113670	Marionette	INFO	Stopped listening on port 50730
+
+###!!! [Child][PContentChild] Error: Send(msgname=PNecko::Msg_RemoveRequestContext) Channel closing: too late to send/recv, messages will be lost
+
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
