@@ -4,5 +4,7 @@
 
 from logic import wordlogic
 
-wordlogic.sortwords('valid_words.txt')
+wordlogic = wordlogic()
+
+wordlogic.sortwords('5words.txt')
 
