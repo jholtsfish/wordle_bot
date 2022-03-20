@@ -1,25 +1,17 @@
-<<<<<<< HEAD
+
 # Why is this necessary? Wordle doesn't have a login. What is this for????
 
-'''from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-import time
+#lol using this file to test stuff now ~conner
 
-class Log_in:
+from logic import wordlogic
 
-# No vars needed for this one
+wordlogic = wordlogic()
 
-# Init vars
-    def __init__(self):
-        self.EMAILFIELD = (By.ID, "i0116")
-        self.PASSWORDFIELD = (By.ID, "i0118")
-        self.NEXTBUTTON = (By.ID, "idSIButton9")
-        self.SIGNINBUTTON = (By.ID, "id_a")
-# End init vars
+wordlogic.sortwords('5words.txt')
 
 
-# Define a function that logs into wordle
+
+'''# Define a function that logs into wordle
     def WordleLogin(self, driver, name, pwd):
         # Go to wordle website
         driver.get('https://login.live.com')
@@ -47,12 +39,12 @@ class Log_in:
 
         # Wait a bit
         time.sleep(1)
-# End defining'''
+# End defining
 =======
 from attr import attr
 import selenium as sl
 
 class Login:
-    attribute = None
+    attribute = None'''
 
->>>>>>> cc171c18b70c1f0af11b6c72e8438b4aa1e05093
+

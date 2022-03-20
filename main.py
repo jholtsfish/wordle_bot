@@ -1,16 +1,22 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from userInfo import user
+=======
+from programInfo import WordleGet
+>>>>>>> 62cce161fd65a211f066860a1bab7dc1f0b91662
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.edge.service import Service as EdgeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.ie.service import Service as IEService
+from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
-userInfo = user()
-userName = input("Please input your login credentials for wordle.\nUser name -->")
-userPassword = input("Password -->")
-userVar = userInfo.CheckUser(userName, userPassword)
-print(userVar)
+WordleGet = WordleGet()
 service = FirefoxService(executable_path=GeckoDriverManager().install())
 driver = webdriver.Firefox(service=service)
+<<<<<<< HEAD
 =======
 from login import Login
 
@@ -26,3 +32,6 @@ with open("valid_words.txt") as file:
 print(words)
 print(thing)
 >>>>>>> cc171c18b70c1f0af11b6c72e8438b4aa1e05093
+=======
+WordleGet.EnterWord('crane', driver=driver)
+>>>>>>> 62cce161fd65a211f066860a1bab7dc1f0b91662
