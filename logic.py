@@ -46,22 +46,3 @@ class wordlogic:
         l5 = sorted(l5)
         let1best = 1
         let1top = 'a'
-            
-        
-
-        
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
