@@ -21,7 +21,7 @@ class Player:
         # access words
         self.words = self.driver.find_elements(By.CLASS_NAME, 'RowL')
         # create dictionary of keys
-        for key in self.driver.find_elements(By.CLASS_NAME, 'Game-keyboard-button'):
+        for key in self.driver.find_elements(By.CLASS_NAME, 'wp-key'):
             self.keys[
                 self.driver.execute_script("return arguments[0].innerHTML", key)
                 ] = key
@@ -42,5 +42,4 @@ class Player:
         return d or "NoWordsEntered"
 
 person = Player()
-person.PressKey('a')
-person.PressKey('p')
+
