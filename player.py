@@ -42,4 +42,8 @@ class Player:
         return d or "NoWordsEntered"
 
 person = Player()
-
+string = 'APPLE'
+for letter in string:
+    person.PressKey(letter)
+person.PressKey('ENTER')
+person.GetLastWord()
