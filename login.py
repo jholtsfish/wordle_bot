@@ -6,5 +6,5 @@ from logic import wordlogic
 
 wordlogic = wordlogic()
 
-wordlogic.sortwords('5words.txt')
+wordlogic.sortwords('2words.txt')
 

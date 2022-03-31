@@ -55,11 +55,7 @@ class wordlogic:
         sumlist = [dict1sum, dict2sum, dict3sum, dict4sum, dict5sum]
         dictlist = [letters1, letters2, letters3, letters4, letters5]
 
-        print(letters1['s'])
-        #formula for getting a percent chance of a letter being in an indice: float(number of times letter appears in indice) / len of wordlist (8525 for 5words.txt that im using right now)
-        wordlist11 = []
-        sauce = ['s', 'a', 'a', 'e', 's']
-        for i in range(100000000000000000000000):
+       
             
             
         
