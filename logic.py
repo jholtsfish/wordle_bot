@@ -1,6 +1,6 @@
 class wordlogic:
     def __init__(self):
-        gkjdfsksdfkjgsd = 'yo'
+        None
     def sortwords(self, filepath):
         wordfile = open(filepath, 'r')
         wordlines = wordfile.readlines()
