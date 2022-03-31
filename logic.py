@@ -55,11 +55,41 @@ class wordlogic:
         sumlist = [dict1sum, dict2sum, dict3sum, dict4sum, dict5sum]
         dictlist = [letters1, letters2, letters3, letters4, letters5]
 
-        print(letters1['s'])
-        #formula for getting a percent chance of a letter being in an indice: float(number of times letter appears in indice) / len of wordlist (8525 for 5words.txt that im using right now)
-        wordlist11 = []
-        sauce = ['s', 'a', 'a', 'e', 's']
-        for i in range(100000000000000000000000):
+
+        #remove all words with reoccurring letters from wordlines
+        w1 = ''
+        w2 = ''
+        w3 = ''
+        w4 = ''
+        w5 = ''
+        wlist = [w1, w2, w3, w4, w5]
+        for n in range(len(wordlines)):
+            for letter in range(5):
+                wlist[letter] = wordlines[n][letter]
+            for letter in wlist:
+                for i in wlist:
+                    if letter == i:
+                        print(wordlines[int(n)])
+                        wordlines.remove(wordlines[n])
+
+        #switch out values in letters dicts for the decimal chance of that letter being in that indice 
+        for dict in dictlist:
+            for letter in dict:
+                dict[letter] = float(dict[letter]) / float(8525)
+        
+        wordlinesdict = {}
+        for word in wordlines:
+            wordlinesdict[word] = float(letters1[word[1]]) * float(letters2[word[2]]) * float(letters3[word[3]]) * float(letters4[word[4]]) * float(letters5[word[5]]) * 100
+
+        for i in range(len(wordlines)):
+            print(str(wordlines[i]), (wordlinesdict[worldlines[i]]))
+
+
+
+            
+
+                    
+                
             
             
         
