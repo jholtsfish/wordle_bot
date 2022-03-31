@@ -20,6 +20,7 @@ class logic:
         validWords1 = []
         badWords = []
         probWords = []
+        guessedWords = []
         while True:        
             letters = {}
             letterPos = {}
@@ -80,8 +81,8 @@ class logic:
                     continue
             letterList = []
             validWords1.clear()
-            wordChoice = random.choice(validWords)
             true = True
+            wordChoice = random.choice(validWords)
             length = len(inWord)
             print(wordChoice, len(validWords))
             more = iter(input('next set please:').split())
@@ -90,4 +91,4 @@ class logic:
             print(validWords)
             continue
 
-    NextWord({'c': 'gray', 'r': 'gray', 'a': 'yellow', 'n': 'gray', 'e': 'gray'})
+    NextWord({'a': 'gray', 'd': 'gray', 'i': 'gary', 'e': 'yellow', 'u': 'yellow'})
