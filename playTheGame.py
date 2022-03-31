@@ -91,4 +91,4 @@ class logic:
             print(validWords)
             continue
 
-    NextWord({'a': 'gray', 'd': 'gray', 'i': 'gary', 'e': 'yellow', 'u': 'yellow'})
+    NextWord({'a': 'gray', 'd': 'gray', 'i': 'gary', 'e': 'gray', 'u': 'yellow'})
