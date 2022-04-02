@@ -51,43 +51,6 @@ class wordlogic:
         for word in wordlines:
             wordlinesdict[word] = float(letters1[word[0]]) * float(letters2[word[1]]) * float(letters3[word[2]]) * float(letters4[word[3]]) * float(letters5[word[4]]) * 100000000
 
-<<<<<<< HEAD
-
-        #remove all words with reoccurring letters from wordlines
-        w1 = ''
-        w2 = ''
-        w3 = ''
-        w4 = ''
-        w5 = ''
-        wlist = [w1, w2, w3, w4, w5]
-        for n in range(len(wordlines)):
-            for letter in range(5):
-                wlist[letter] = wordlines[n][letter]
-            for letter in wlist:
-                for i in wlist:
-                    if letter == i:
-                        print(wordlines[int(n)])
-                        wordlines.remove(wordlines[n])
-
-        #switch out values in letters dicts for the decimal chance of that letter being in that indice 
-        for dict in dictlist:
-            for letter in dict:
-                dict[letter] = float(dict[letter]) / float(8525)
-        
-        wordlinesdict = {}
-        for word in wordlines:
-            wordlinesdict[word] = float(letters1[word[1]]) * float(letters2[word[2]]) * float(letters3[word[3]]) * float(letters4[word[4]]) * float(letters5[word[5]]) * 100
-
-        for i in range(len(wordlines)):
-            print(str(wordlines[i]), (wordlinesdict[worldlines[i]]))
-
-
-
-            
-
-                    
-                
-=======
         #sort that dictionary
         self.sortedwords = sorted(wordlinesdict.items(), key = lambda kv: kv[1])
         
@@ -108,7 +71,6 @@ class wordlogic:
     
 
        
->>>>>>> d7524ad9593afbc46d5b5b5ac6c7f553680c1ee1
             
             
         
