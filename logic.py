@@ -7,7 +7,7 @@ class wordlogic:
 
             wordlines = wordfile.readlines()
 
-            for i in range(len(worddlines) -1, -1, -1):
+            for i in range(len(wordlines) -1, -1, -1):
                         wordlines[i] = wordlines[i].strip()
                         if len(wordlines[i]) != 5:
                             print(f"removing word: {wordlines[i]}")
