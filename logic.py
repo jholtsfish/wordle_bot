@@ -55,14 +55,40 @@ class wordlogic:
         sorteddict = ({key: value for key, value in sorted(wordlinesdict.items(), key=lambda item: item[1])})
         self.wordlist = sorteddict.keys()
 
-        def Guess(self, l1, l2, l3, l4, l5, word):
-            for word in self.wordlist:
-                new1 = word[0]
-                new2 = word[1]
-                new3 = word[2]
-                new4 = word[3]
-                new5 = word[4]
+    def guess(self, l1, l2, l3, l4, l5):
+        listlist = [l1, l2, l3, l4, l5]
+        for word in self.wordlist:
+            for i in range(5):
+                if word[i] not in listlist[i]:
+                    self.wordlist.remove(word)
+                
+                
 
+    def specify(self, i1, i1c, i2, i2c, i3, i3c, i4, i4c, i5, i5c, l1, l2, l3, l4, l5):
+        
+        alphalist = [l1, l2, l3, l4, l5]
+        ilist = [i1, i2, i3, i4, i5]
+        iclist = [i1c, i2c, i3c, i4c, i5c]
+
+        for i in range(5):
+            if iclist[i] == 'g':
+                for letter in alphalist[i]:
+                    if letter != ilist[i]:
+                        alphalist[i].remove(letter)
+            if iclist[i] == 'n':
+                for l in alphalist:
+                    l.remove(ilist[i])
+            if iclist[i] == 'y':
+                alphalist[i].remove(ilist[i])
+
+        self.newlist1 = l1
+        self.newlist2 = l2
+        self.newlist3 = l3
+        self.newlist4 = l4
+        self.newlist5 = l5
+
+
+            
 
 
         
