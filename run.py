@@ -6,7 +6,7 @@ wordlogic = wordlogic()
 
 wordlogic.sortwords('2words.txt')
 
-print(wordlogic.sortedwords)
+print(wordlogic.wordlist)
 
 
 

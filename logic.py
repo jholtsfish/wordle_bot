@@ -52,12 +52,17 @@ class wordlogic:
             wordlinesdict[word] = float(letters1[word[0]]) * float(letters2[word[1]]) * float(letters3[word[2]]) * float(letters4[word[3]]) * float(letters5[word[4]]) * 100000000
 
         #sort that dictionary
-        self.sortedwords = sorted(wordlinesdict.items(), key = lambda kv: kv[1])
-        
-    
-    def guess(self, previousword, letter1color, letter2color, letter3color, letter4color, letter5color):
-        #colors can be y(ellow), g(reen), n(ull, or grey)
-        print('.')
+        sorteddict = ({key: value for key, value in sorted(wordlinesdict.items(), key=lambda item: item[1])})
+        self.wordlist = sorteddict.keys()
+
+        def Guess(self, l1, l2, l3, l4, l5, word):
+            for word in self.wordlist:
+                new1 = word[0]
+                new2 = word[1]
+                new3 = word[2]
+                new4 = word[3]
+                new5 = word[4]
+
 
 
         
