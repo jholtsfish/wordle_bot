@@ -4,7 +4,7 @@ import random, time, enum
 class logic:
     None
     def __init__(self):
-        self.wordfile = open('5words.txt', 'r')
+        self.wordfile = open('2words.txt', 'r')
         self.wordlines = self.wordfile.readlines()
         for i in range(len(self.wordlines) -1, -1, -1):
             self.wordlines[i] = self.wordlines[i].strip()
