@@ -60,25 +60,4 @@ class wordlogic:
         wordlist11 = []
         sauce = ['s', 'a', 'a', 'e', 's']
         for i in range(100000000000000000000000):
-            
-            
-        
-
-       
-
-        
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
+            None
