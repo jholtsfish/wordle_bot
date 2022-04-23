@@ -2,14 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-from logic import Logic
 
 class Player:
     # install webdriver service manager
     driver = webdriver.Chrome(ChromeDriverManager().install())
     words = []
     keys = {}
-    brain = Logic()
     
     def __init__(self):
         # open wordle
@@ -56,3 +54,6 @@ class Player:
         for letter in word:
             self.PressKey(letter)
         self.PressKey("ENTER")
+p = Player()
+
+p.EnterWord('cares')
