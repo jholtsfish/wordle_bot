@@ -10,15 +10,12 @@ class logic:
         '''
         So, I'm taking in a dict with five letters as keys, with their values as their color. I need to figure out the best word to choose next. 
         '''
-        wordfile = open('words.txt', 'r')
+        wordfile = open('5words.txt', 'r')
         wordlines = wordfile.readlines()
         for i in range(len(wordlines) -1, -1, -1):
-            print(wordlines[i])
             wordlines[i] = wordlines[i].strip()
             if len(wordlines[i]) != 5:
                 wordlines.remove(wordlines[i])
-        with open('5LetterWords.txt', 'w') as data:
-            data.writelines(wordlines)
         validWords = wordlines
         validWords1 = []
         badWords = []
@@ -93,5 +90,4 @@ class logic:
             dictOfWords.update(dict(zip(more, more)))
             print(validWords)
             continue
-
     NextWord({'a': 'gray', 'd': 'yellow', 'i': 'gary', 'e': 'yellow', 'u': 'gray'})
