@@ -31,7 +31,7 @@ class logic:
             notInWord = []
             counter = 1
             for letter in dictOfWords:
-                if dictOfWords[letter] == 'green':
+                if dictOfWords[letter]   == 'green':
                     letters.update({letter: 'green'})
                     letterPos.update({letter: counter})
                     counter += 1
@@ -90,5 +90,4 @@ class logic:
             dictOfWords.update(dict(zip(more, more)))
             print(validWords)
             continue
-
-    NextWord({'a': 'gray', 'd': 'gray', 'i': 'gary', 'e': 'yellow', 'u': 'yellow'})
+    NextWord({'a': 'gray', 'd': 'yellow', 'i': 'gary', 'e': 'yellow', 'u': 'gray'})
