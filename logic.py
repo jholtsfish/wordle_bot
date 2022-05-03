@@ -80,11 +80,13 @@ class wordlogic:
             self.wordlist.remove(item)
         progress = int(100 - ((len(self.wordlist))/12653 * 100))
         print(f"final length: {len(self.wordlist)}")
+        print(self.wordlist)
         print(f"\n {round(progress, 4)}% of words eliminated")
         print(f"next word to guess: {self.wordlist[-1]}")
 
     def specify(self, i1, i1c, i2, i2c, i3, i3c, i4, i4c, i5, i5c, l1, l2, l3, l4, l5):
         ylist = []
+        wordrmlist = []
         alphalist = [l1, l2, l3, l4, l5]
         ilist = [i1, i2, i3, i4, i5]
         iclist = [i1c, i2c, i3c, i4c, i5c]
@@ -93,9 +95,12 @@ class wordlogic:
             if iclist[i] == 'g':
                 alphalist[i] = [str(ilist[i])]
             if iclist[i] == 'n':
+                try:
                     for l in range(5):
                         if len(alphalist[l]) != 1:
                             alphalist[l].remove(ilist[i])
+                except:
+                    pass
             if iclist[i] == 'y':
                 try:
                     alphalist[i].remove(ilist[i])
@@ -104,8 +109,11 @@ class wordlogic:
                     pass
         for i in range(len(self.wordlist) -1, -1, -1 ):
             for letter in ylist:
-                if letter not in self.wordlist[i]:
-                    self.wordlist.remove(self.wordlist[i])
+                if letter not in self.wordlist[i] and self.wordlist[i] not in wordrmlist:
+                    wordrmlist.append(self.wordlist[i])
+        for word in wordrmlist:
+            self.wordlist.remove(word)
+                    
 
 
         self.newlist1 = alphalist[0]
