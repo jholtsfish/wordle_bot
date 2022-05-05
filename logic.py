@@ -108,15 +108,21 @@ class wordlogic:
 
         print(f"final length: {len(self.wordlist)}")
         print(self.wordlist)
+        print(self.guesslist)
         print(f"\n {round(progress, 4)}% of words eliminated")
 
         nextword = ''
-        if len(self.wordlist) <=5:
+        if len(self.wordlist) < 5:
             nextword = str(self.wordlist[-1])
         else:
-            nextword = str(self.guesslist[-1])
-
-        print(f"next word to guess: {nextword}")
+            try:
+                nextword = str(self.guesslist[-1])
+            except IndexError:
+                nextword = str(self.wordlist[-1])
+        if len(self.wordlist) == 1:
+            print("YOU WON!")
+        else:
+            print(f"next word to guess: {nextword}")
 
     def specify(self, i1, i1c, i2, i2c, i3, i3c, i4, i4c, i5, i5c, l1, l2, l3, l4, l5, gl1, gl2, gl3, gl4, gl5):
         ylist = []
@@ -155,8 +161,10 @@ class wordlogic:
                 if letter not in self.wordlist[i] and self.wordlist[i] not in wordrmlist:
                     wordrmlist.append(self.wordlist[i]) 
         for word in wordrmlist:
-            self.wordlist.remove(word)
-            self.guesslist.remove(word)
+            if word in self.wordlist:
+                self.wordlist.remove(word)
+            if word in self.guesslist:
+                self.guesslist.remove(word)
                     
 
 
