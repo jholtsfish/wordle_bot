@@ -45,7 +45,7 @@ class wordlogic:
         #convert dict values from how many times a letter appears, to the % of the time that it appears (%chance that the letter will appear)
         for dict in dictlist:
             for letter in dict:
-                dict[letter] = float(dict[letter]) / float(12653) 
+                dict[letter] = float(dict[letter]) / float(12653)
 
         #add every word to a dictionary, then assign a value to it based on the %chance for each letter that i just did above
         for word in wordlines:
@@ -54,9 +54,13 @@ class wordlogic:
         #sort that dictionary
         sorteddict = ({key: value for key, value in sorted(wordlinesdict.items(), key=lambda item: item[1])})
         self.wordlist = list(sorteddict.keys())
+        self.guesslist = []
+        for word in self.wordlist:
+            self.guesslist.append(word)
 
-    def guess(self, l1, l2, l3, l4, l5):
+    def guess(self, l1, l2, l3, l4, l5, gl1, gl2, gl3, gl4, gl5):
         rmlist = []
+        guessrmlist = []
         print(f"initial length: {len(self.wordlist)}")
         
         for word in self.wordlist:
@@ -76,17 +80,48 @@ class wordlogic:
             if word[4] not in l5 and word not in rmlist:
                 rmlist.append(word)
             
+        for word in self.guesslist:
+
+            if word [0] not in gl1 and word not in guessrmlist:
+                guessrmlist.append(word)
+
+            if word [1] not in gl2 and word not in guessrmlist:
+                guessrmlist.append(word)
+
+            if word [2] not in gl3 and word not in guessrmlist:
+                guessrmlist.append(word)
+
+            if word [3] not in gl4 and word not in guessrmlist:
+                guessrmlist.append(word)
+
+            if word [4] not in gl5 and word not in guessrmlist:
+                guessrmlist.append(word)
+
+            
         for item in rmlist:
             self.wordlist.remove(item)
+
+        for word in guessrmlist:
+            self.guesslist.remove(word)
+
         progress = int(100 - ((len(self.wordlist))/12653 * 100))
+
         print(f"final length: {len(self.wordlist)}")
         print(self.wordlist)
         print(f"\n {round(progress, 4)}% of words eliminated")
-        print(f"next word to guess: {self.wordlist[-1]}")
 
-    def specify(self, i1, i1c, i2, i2c, i3, i3c, i4, i4c, i5, i5c, l1, l2, l3, l4, l5):
+        nextword = ''
+        if len(self.wordlist) <=5:
+            nextword = str(self.wordlist[-1])
+        else:
+            nextword = str(self.guesslist[-1])
+
+        print(f"next word to guess: {nextword}")
+
+    def specify(self, i1, i1c, i2, i2c, i3, i3c, i4, i4c, i5, i5c, l1, l2, l3, l4, l5, gl1, gl2, gl3, gl4, gl5):
         ylist = []
         wordrmlist = []
+        alphaguesslist = [gl1, gl2, gl3, gl4, gl5]
         alphalist = [l1, l2, l3, l4, l5]
         ilist = [i1, i2, i3, i4, i5]
         iclist = [i1c, i2c, i3c, i4c, i5c]
@@ -94,6 +129,9 @@ class wordlogic:
         for i in range(5):
             if iclist[i] == 'g':
                 alphalist[i] = [str(ilist[i])]
+                for letterlist in alphaguesslist:
+                    if ilist[i] in letterlist:
+                        letterlist.remove(ilist[i])
             if iclist[i] == 'n':
                 try:
                     for l in range(5):
@@ -101,18 +139,24 @@ class wordlogic:
                             alphalist[l].remove(ilist[i])
                 except:
                     pass
+                for nletterlist in alphaguesslist:
+                    if ilist[i] in nletterlist:
+                        nletterlist.remove(ilist[i])
             if iclist[i] == 'y':
                 try:
                     alphalist[i].remove(ilist[i])
                     ylist.append(ilist[i])
                 except:
                     pass
-        for i in range(len(self.wordlist) -1, -1, -1 ):
+                if ilist[i] in alphaguesslist[i]:
+                    alphaguesslist[i].remove(ilist[i])
+        for i in range(len(self.wordlist) -1, -1, -1):
             for letter in ylist:
                 if letter not in self.wordlist[i] and self.wordlist[i] not in wordrmlist:
-                    wordrmlist.append(self.wordlist[i])
+                    wordrmlist.append(self.wordlist[i]) 
         for word in wordrmlist:
             self.wordlist.remove(word)
+            self.guesslist.remove(word)
                     
 
 
@@ -121,3 +165,9 @@ class wordlogic:
         self.newlist3 = alphalist[2]
         self.newlist4 = alphalist[3]
         self.newlist5 = alphalist[4]
+        
+        self.guesslist1 = alphaguesslist[0]
+        self.guesslist2 = alphaguesslist[1]
+        self.guesslist3 = alphaguesslist[2]
+        self.guesslist4 = alphaguesslist[3]
+        self.guesslist5 = alphaguesslist[4]
