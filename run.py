@@ -1,6 +1,11 @@
-#file to run stuff in logic.py
+from wordlogic import wordlogic
+from weblogic import webinterface
 
-from logic import wordlogic
+wordlogic = wordlogic()
+
+webinterface = webinterface()
+
+#lists for eliminating words in wordlogic
 
 list1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
         'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
@@ -16,31 +21,57 @@ list4 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
         ]
 list5 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
         'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+]
+
+glist1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
         ]
+glist2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        ]
+glist3 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        ]
+glist4 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        ]
+glist5 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+]
 
-wordlogic = wordlogic()
+for i in range(500):
+    print("\n")
 
-wordlogic.sortwords('2words.txt')
 
-print(wordlogic.wordlist)
+answerlist = wordlogic.sortwords('12words.txt')
+guesslist = wordlogic.sortwords('2words.txt')
 
-#(self, i1, i1c, i2, i2c, i3, i3c, i4, i4c, i5, i5c, l1, l2, l3, l4, l5)
-wordlogic.specify(str(input('i1')), str(input('i1c')), str(input('i2')), str(input('i2c')), str(input('i3')), str(input('i3c')), str(input('i4')), str(input('i4c')), str(input('i5')), str(input('i5c')), list1, list2, list3, list4, list5)
+#(self, i1, i1c, i2, i2c, i3, i3c, i4, i4c, i5, i5c, l1, l2, l3, l4, l5) is the pattern for wordlogic.specify
 
-wordlogic.guess(wordlogic.newlist1, wordlogic.newlist2, wordlogic.newlist3, wordlogic.newlist4, wordlogic.newlist5)
+#use cares as starting word for round 1
 
-wordlogic.specify(str(input('i1')), str(input('i1c')), str(input('i2')), str(input('i2c')), str(input('i3')), str(input('i3c')), str(input('i4')), str(input('i4c')), str(input('i5')), str(input('i5c')), wordlogic.newlist1, wordlogic.newlist2, wordlogic.newlist3, wordlogic.newlist4, wordlogic.newlist5)
+gameround = int(1)
 
-wordlogic.guess(wordlogic.newlist1, wordlogic.newlist2, wordlogic.newlist3, wordlogic.newlist4, wordlogic.newlist5)
+webinterface.enterword(wordlogic.nextword)
 
-wordlogic.specify(str(input('i1')), str(input('i1c')), str(input('i2')), str(input('i2c')), str(input('i3')), str(input('i3c')), str(input('i4')), str(input('i4c')), str(input('i5')), str(input('i5c')), wordlogic.newlist1, wordlogic.newlist2, wordlogic.newlist3, wordlogic.newlist4, wordlogic.newlist5)
+webinterface.reapdata(gameround)
 
-wordlogic.guess(wordlogic.newlist1, wordlogic.newlist2, wordlogic.newlist3, wordlogic.newlist4, wordlogic.newlist5)
+wordlogic.eliminate_answers(wordlogic.nextword, webinterface.lettercolors[0], webinterface.lettercolors[1], webinterface.lettercolors[2], webinterface.lettercolors[3], webinterface.lettercolors[4], list1, list2, list3, list4, list5, answerlist)
 
-wordlogic.specify(str(input('i1')), str(input('i1c')), str(input('i2')), str(input('i2c')), str(input('i3')), str(input('i3c')), str(input('i4')), str(input('i4c')), str(input('i5')), str(input('i5c')), wordlogic.newlist1, wordlogic.newlist2, wordlogic.newlist3, wordlogic.newlist4, wordlogic.newlist5)
+wordlogic.eliminate_guesses(wordlogic.nextword, webinterface.lettercolors[0], webinterface.lettercolors[1], webinterface.lettercolors[2], webinterface.lettercolors[3], webinterface.lettercolors[4], glist1, glist2, glist3, glist4, glist5, guesslist)
 
-wordlogic.guess(wordlogic.newlist1, wordlogic.newlist2, wordlogic.newlist3, wordlogic.newlist4, wordlogic.newlist5)
-            
-wordlogic.specify(str(input('i1')), str(input('i1c')), str(input('i2')), str(input('i2c')), str(input('i3')), str(input('i3c')), str(input('i4')), str(input('i4c')), str(input('i5')), str(input('i5c')), wordlogic.newlist1, wordlogic.newlist2, wordlogic.newlist3, wordlogic.newlist4, wordlogic.newlist5)
+gameround += 1
 
-wordlogic.guess(wordlogic.newlist1, wordlogic.newlist2, wordlogic.newlist3, wordlogic.newlist4, wordlogic.newlist5)
+for i in range(5):
+        webinterface.enterword(wordlogic.nextword)
+
+        webinterface.reapdata(gameround)
+
+        wordlogic.eliminate_answers(wordlogic.nextword, webinterface.lettercolors[0], webinterface.lettercolors[1], webinterface.lettercolors[2], webinterface.lettercolors[3], webinterface.lettercolors[4], list1, list2, list3, list4, list5, answerlist)
+
+        wordlogic.eliminate_guesses(wordlogic.nextword, webinterface.lettercolors[0], webinterface.lettercolors[1], webinterface.lettercolors[2], webinterface.lettercolors[3], webinterface.lettercolors[4], glist1, glist2, glist3, glist4, glist5, guesslist)
+
+        gameround += 1
+        if webinterface.youwin == True:
+                print('YOU WIN!')
+                break
